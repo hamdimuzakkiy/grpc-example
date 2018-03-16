@@ -1,0 +1,40 @@
+syntax = "proto3";
+package calculator;
+
+service calculator {
+	rpc Plus(PlusRequest) returns (PlusResponse) {}
+	rpc Minus(MinusRequest) returns (MinusResponse) {}
+	rpc MultiplePlus(MultiplePlusRequest) returns (PlusResponse) {}
+	rpc Devide(DevideRequest) returns (DevideResponse) {}
+}
+
+message PlusRequest {
+	int64 number1 = 1;
+	int64 number2 = 2;
+}
+
+message PlusResponse {
+	int64 result = 1;
+}
+
+message MinusRequest {
+	int64 number1 = 1;
+	int64 number2 = 2;
+}
+
+message MinusResponse {
+	int64 result = 1;
+}
+
+message MultiplePlusRequest {
+	repeated int64 number = 1;
+}
+
+message DevideRequest {
+	int64 number1 = 1;
+	int64 number2 = 2;
+}
+
+message DevideResponse {
+	int64 result = 1;
+}
